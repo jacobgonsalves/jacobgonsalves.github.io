@@ -1,49 +1,32 @@
 import Link from 'next/link';
 import React from 'react';
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { MdEmail } from 'react-icons/md';
-import { DiCssdeck } from 'react-icons/di';
-
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
+import { Container, Navbar, Nav} from 'react-bootstrap';
 
 const Header = () =>  (
-<Container>
-  <Div1>
-    <Link href="/">
-      <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: "20px" }}>
-        <DiCssdeck size="3rem" /> <Span>Personal Portfolio</Span>
-      </a>
-    </Link>
-  </Div1>
-  <Div2>
-    <li>
-      <Link href="#projects">
-        <NavLink>Projects</NavLink>
-      </Link>
-    </li>
-    <li>
-      <Link href="#technologies">
-        <NavLink>Technologies</NavLink>
-      </Link>
-    </li>
-    <li>
-      <Link href="#about">
-        <NavLink>About</NavLink>
-      </Link>
-    </li>
-  </Div2>
-  <Div3>
-    <SocialIcons href="https://github.com/jacobgonsalves" target="_blank">
-      <AiFillGithub size="3rem" />
-    </SocialIcons>
-    <SocialIcons href="https://linkedin.com/in/jacobgonsalves" target="_blank">
-      <AiFillLinkedin size="3rem" />
-    </SocialIcons>
-    <SocialIcons href="mailto:jacobgonsalves33@gmail.com" target="_blank">
-      <MdEmail email="jacobgonsalves@gmail.com" size="3rem" />
-    </SocialIcons>
-  </Div3>
-</Container>
+
+  <Navbar className="navBar" collapseOnSelect style={{backgroundColor: "#0F1624"}} expand="lg" variant="dark" fixed="top">
+    <Container>
+        
+        <Navbar.Brand href="#home">Personal Showcase</Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />    
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="justify-content-end" style={{width: "100%"}} defaultActiveKey="#home" as="ul">
+            <Nav.Item as="li">
+              <Nav.Link href="#projects">Projects</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link href="#timeline">Timeline</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link href="#accomplishments">Accomplishments</Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+
+    </Container>
+  </Navbar>
+
 );
 
 export default Header;

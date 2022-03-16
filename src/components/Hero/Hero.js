@@ -1,21 +1,25 @@
 import React from 'react';
+import FullHeight from 'react-full-height';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 
 const Hero = (props) => (
-  <Section row nopadding>
+
+  <Section id="home" row nopadding style={{paddingTop: "5%"}}>
+    <FullHeight startWidth={1024}>
     <LeftSection>
       <SectionTitle main center>
-        Welome to <br />
-        My Personal Portfolio
+        Welcome to<br />
+        my personal showcase
       </SectionTitle>
       <SectionText>
-        The purpose of this website is to showcase my skills and current timeline
+        View a collection of recent projects, career updates, and notable accomplishments
       </SectionText>
-      <Button onClick={() => window.location = 'http://google.com'} >Learn More</Button>
+      <Button onClick={() => window.location = 'https://linkedin.com/in/jacobgonsalves'}>Connect on LinkedIn</Button>
     </LeftSection>
+    </FullHeight>
   </Section>
 );
 
